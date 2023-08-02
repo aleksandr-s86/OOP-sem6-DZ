@@ -4,7 +4,6 @@ import java.util.List;
 
 import Seminar1.Automat;
 
-
 public interface ActorBehavior {
 
   void setMakeOrder(boolean setTade);
@@ -18,5 +17,4 @@ public interface ActorBehavior {
   Order makeOrder(List<String> listHuman, Automat automat, Human human);
 
 }
-   
 

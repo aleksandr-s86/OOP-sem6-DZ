@@ -1,8 +1,9 @@
 package Seminar2;
 
 import java.util.List;
-import Seminar1.Product;
+
 import Seminar1.Automat;
+import Seminar1.Product;
 
 public class Order {
 

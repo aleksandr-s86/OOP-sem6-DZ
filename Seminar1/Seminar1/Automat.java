@@ -15,16 +15,23 @@ getProduct(String name, int volume, int temperature), выдающий прод�
 
 import java.util.ArrayList;
 import java.util.List;
-
 import Seminar2.Human;
 import Seminar2.Order;
 
 public class Automat {
 
-  List<Product> listProduct = new ArrayList<>();
+  protected List<Product> listProduct = new ArrayList<>();
 
   public void initProduct(List<Product> myList) {
     listProduct = myList;
+  }
+
+  public List<Product> getListProduct() {
+    return listProduct;
+  }
+
+  public void setListProduct(List<Product> listProduct) {
+    this.listProduct = listProduct;
   }
 
   public Product getProduct(String name) {
@@ -34,8 +41,10 @@ public class Automat {
       }
     }
     return null;
+
   }
-   public Order createOrder(List<Product> listHuman, Automat automat, Human human) {
+
+  public Order createOrder(List<Product> listHuman, Automat automat, Human human) {
     ArrayList<Product> shoppingList = new ArrayList<>();
     Product shoppingProduct;
     double totalPrice = 0;
@@ -44,6 +53,9 @@ public class Automat {
       if (product.equals(shoppingProduct) && automat.getProduct(product.getName()).getQuantity() > 0) {
         shoppingList.add(shoppingProduct);
         totalPrice += automat.getProduct(product.getName()).getPrice();
+        (automat.getProduct(product.getName())).setQuantity((automat.getProduct(product.getName())).getQuantity() - 1);
+      } else if (product.equals(shoppingProduct) && automat.getProduct(product.getName()).getQuantity() == 0) {
+        System.out.println(product.getName() + " нет в наличии");
       }
     }
     human.setTakeOrder(true);
@@ -61,4 +73,5 @@ public class Automat {
     }
     return result + "]";
   }
+
 }

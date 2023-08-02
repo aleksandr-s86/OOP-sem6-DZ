@@ -1,13 +1,12 @@
 package Seminar1;
 import java.util.Calendar;
 
-public abstract class Product {
+public abstract class Product implements Comparable<Product> {
 
   private String name;
   private int price;
   private int quantity;
   private Calendar bestBefore;
-  // int [] storage;
 
   public Product(String name, int price, int quantity, Calendar bestBefore) {
     this.name = name;
@@ -52,6 +51,15 @@ public abstract class Product {
   public String toString() {
     return "Product: name=" + name + ", price=" + price + ", quantity=" + quantity + ", bestBefore="
         + bestBefore.get(Calendar.YEAR) + "/" + bestBefore.get(Calendar.MONTH);
+  }
+
+  @Override
+  public int compareTo(Product o) {
+    int resultOfComparing = this.getName().compareTo(o.getName());
+    if (resultOfComparing == 0) {
+      resultOfComparing = this.getName().compareTo(o.getName());
+    }
+    return resultOfComparing;
   }
 
 }

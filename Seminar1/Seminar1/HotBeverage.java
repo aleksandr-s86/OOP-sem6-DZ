@@ -4,15 +4,19 @@ import java.util.Calendar;
 
 public class HotBeverage extends Beverage {
 
-  Integer temperature;
+  private Integer temperature;
 
   public HotBeverage(String name, int price, int quantity, Calendar bestBefore, double volume, Integer temperature) {
     super(name, price, quantity, bestBefore, volume);
     this.temperature = temperature;
   }
 
-  public Integer getTemp() {
+  public Integer getTemperature() {
     return temperature;
+  }
+
+  public void setTemperature(Integer temperature) {
+    this.temperature = temperature;
   }
 
   @Override

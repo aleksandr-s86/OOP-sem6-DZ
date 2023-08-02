@@ -17,8 +17,10 @@ package Seminar2;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import Seminar1.Automat;
 import Seminar1.Product;
+
 public class Human extends Actor {
 
   private double money;
