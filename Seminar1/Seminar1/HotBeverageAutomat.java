@@ -24,6 +24,16 @@ public class HotBeverageAutomat extends Automat {
 
   }
 
+  public HotBeverage getProductOnName(String name) {
+    for (Product el : listProduct) {
+      if (el instanceof Product & el.getName().equals(name)) {
+        return (HotBeverage) el;
+      }
+    }
+    return null;
+
+  }
+
 }
 
 

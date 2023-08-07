@@ -1,12 +1,11 @@
 package Seminar1;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import Seminar2.Human;
-import Seminar3.ProductTemperatureComparator;
-import Seminar3.ProductVolumeComparator;
+import Seminar4.AutomatService;
+import Seminar4.HotAutomatService;
 
 public class Main {
 
@@ -35,8 +34,55 @@ public class Main {
     myList2.add(product2);
     myList2.add(product3);
 
-    Automat hbAutomat = new HotBeverageAutomat();
+    HotBeverageAutomat hbAutomat = new HotBeverageAutomat();
     hbAutomat.initProduct(myList);
+
+    System.out.println("Наличие в  HotBeverageAutomat до пополнения " + hbAutomat.toString());
+    System.out.println("----------");
+
+    HotBeverage beverageProduct6 = new HotBeverage("Glasse", 210, 12, new GregorianCalendar(2023, 7, 20, 0, 0), 0.8,
+        50);
+    HotBeverage beverageProduct7 = new HotBeverage("IceCoffe", 100, 7, new GregorianCalendar(2023, 7, 20, 0, 0), 0.2,
+        30);
+
+    HotAutomatService HotAutomatService = new HotAutomatService();
+    HotAutomatService.restock(hbAutomat, beverageProduct6);
+
+    System.out
+        .println("Наличие в HotBeverageAutomat после пополнения " + beverageProduct6.getName() + " на "
+            + beverageProduct6.getQuantity() + ": "
+            + hbAutomat.toString());
+    System.out.println("----------");
+    HotAutomatService.restock(hbAutomat, beverageProduct7);
+    System.out
+        .println("Наличие в HotBeverageAutomat после пополнения " + beverageProduct7.getName() + " на "
+            + beverageProduct7.getQuantity() + ": "
+            + hbAutomat.toString());
+    System.out.println("----------");
+    System.out.println("----------");
+
+    Automat automat = new Automat();
+    automat.initProduct(myList2);
+    System.out.println("Наличие в  Automat до пополнения " + automat.toString());
+    System.out.println("----------");
+
+    Food product4 = new Food("Twix", 80, 21, new GregorianCalendar(2023, 10, 10, 0, 0), 25);
+    Food product5 = new Food("Bounty", 90, 18, new GregorianCalendar(2023, 10, 10, 0, 0), 20);
+
+    AutomatService automatService = new AutomatService();
+    automatService.restock(automat, product4);
+
+    System.out.println(
+        "Наличие в Automat после пополнения " + product4.getName() + " на " + product4.getQuantity() + ": "
+            + automat.toString());
+    System.out.println("----------");
+
+    automatService.restock(automat, product5);
+    System.out.println(
+        "Наличие в Automat после пополнения " + product5.getName() + " на " + product5.getQuantity() + ": "
+            + automat.toString());
+    System.out.println("----------");
+    System.out.println("----------");
 
     Human human = new Human("Alex", false, false, 500);
     human.setAutomat(hbAutomat);
@@ -56,31 +102,6 @@ public class Main {
 
     System.out.println("----------");
     System.out.println("Наличие в автомате после выдачи заказа -> " + hbAutomat.toString());
-
-    System.out.println("----------");
-    System.out.println("----------");
-
-    System.out.println(myList.toString());
-    System.out.println("----------");
-
-    myList.sort(new ProductTemperatureComparator());
-    System.out.println("Сортировка по температуре -> " + myList.toString());
-    System.out.println("----------");
-
-    myList.sort(new ProductVolumeComparator());
-    System.out.println("Сортировка по объему -> " + myList.toString());
-    System.out.println("----------");
-
-    Collections.sort(myList);
-    System.out.println("Сортировка по имени -> " + myList.toString());
-    System.out.println("----------");
-
-    System.out.println(myList2.toString());
-    System.out.println("----------");
-
-    Collections.sort(myList2);
-    System.out.println("Сортировка по весу -> " + myList2.toString());
-    System.out.println("----------");
 
   }
 }
