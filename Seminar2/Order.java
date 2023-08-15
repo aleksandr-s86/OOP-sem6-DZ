@@ -5,7 +5,7 @@ import java.util.List;
 import Seminar1.Automat;
 import Seminar1.Product;
 
-public class Order {
+public class Order { // принцип единственной ответственности
 
   private List<Product> productList;
   private Human human;
@@ -52,7 +52,7 @@ public class Order {
   }
 
   @Override
-  public String toString() {
+  public String toString() { //Принцип открытости закрытости
     String result = "Order [";
     for (int index = 0; index < productList.size(); index++) {
       result += "Product" + (index + 1) + "=" + productList.get(index).getName() + ", ";

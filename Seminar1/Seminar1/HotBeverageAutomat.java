@@ -2,14 +2,14 @@ package Seminar1;
 
 import java.util.List;
 
-public class HotBeverageAutomat extends Automat {
+public class HotBeverageAutomat extends Automat { //Принцип открытости закрытости, принцип единственной ответственности
 
-  public HotBeverageAutomat() {
+  public HotBeverageAutomat() { //принцип единственной ответственности
     super();
   }
 
   @Override
-  public void initProduct(List<Product> myList) {
+  public void initProduct(List<Product> myList) { //Принцип открытости закрытости
     super.initProduct(myList);
   }
 

@@ -21,7 +21,7 @@ import java.util.List;
 import Seminar1.Automat;
 import Seminar1.Product;
 
-public class Human extends Actor {
+public class Human extends Actor { //Принцип открытости закрытости, принцип единственной ответственности
 
   private double money;
   private Automat automat;

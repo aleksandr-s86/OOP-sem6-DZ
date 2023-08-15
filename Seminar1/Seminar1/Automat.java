@@ -18,23 +18,23 @@ import java.util.List;
 import Seminar2.Human;
 import Seminar2.Order;
 
-public class Automat {
+public class Automat { //Принцип Единственной ответственности
 
   protected List<Product> listProduct = new ArrayList<>();
 
-  public void initProduct(List<Product> myList) {
-    listProduct = myList;
+  public void initProduct(List<Product> myList) { //Принцип Единственной ответственности
+    listProduct = myList; 
   }
 
-  public List<Product> getListProduct() {
+  public List<Product> getListProduct() { //Принцип Единственной ответственности
     return listProduct;
   }
 
-  public void setListProduct(List<Product> listProduct) {
+  public void setListProduct(List<Product> listProduct) { //Принцип Единственной ответственности
     this.listProduct = listProduct;
   }
 
-  public Product getProduct(String name) {
+  public Product getProduct(String name) { //Принцип Единственной ответственности
     for (Product el : listProduct) {
       if (el.getName().equals(name)) {
         return el;
@@ -44,7 +44,7 @@ public class Automat {
 
   }
 
-  public Order createOrder(List<Product> listHuman, Automat automat, Human human) {
+  public Order createOrder(List<Product> listHuman, Automat automat, Human human) { //Принцип Единственной ответственности
     ArrayList<Product> shoppingList = new ArrayList<>();
     Product shoppingProduct;
     double totalPrice = 0;
@@ -65,7 +65,7 @@ public class Automat {
   }
 
   @Override
-  public String toString() {
+  public String toString() {                 //Принцип открытости закрытости
     String result = "Automat [\n";
     for (int i = 0; i < listProduct.size(); i++) {
       result += listProduct.get(i) + "\n";

@@ -1,6 +1,6 @@
 package Seminar2;
 
-public abstract class Actor implements ActorBehavior {
+public abstract class Actor implements ActorBehavior { //Принцип открытости закрытости, принцип единственной ответственности
 
   private String name;
   protected boolean makeOrder;
@@ -13,16 +13,17 @@ public abstract class Actor implements ActorBehavior {
 
   }
 
-  public String getName() {
+  public String getName() { //принцип единственной ответственности
+
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(String name) {  //принцип единственной ответственности
     this.name = name;
   }
 
   @Override
-  public String toString() {
+  public String toString() { //Принцип открытости закрытости
     return "Actor: name=" + name + ", makeOrder=" + makeOrder + ", takeOrder=" + takeOrder;
   }
 

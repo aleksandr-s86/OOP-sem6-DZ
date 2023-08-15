@@ -1,7 +1,7 @@
 package Seminar1;
 import java.util.Calendar;
 
-public abstract class Product implements Comparable<Product> {
+public abstract class Product implements Comparable<Product> { //Принцип подстановки Барбары Лисков
 
   private String name;
   private int price;
@@ -48,13 +48,13 @@ public abstract class Product implements Comparable<Product> {
   }
 
   @Override
-  public String toString() {
+  public String toString() { //Принцип открытости закрытости
     return "Product: name=" + name + ", price=" + price + ", quantity=" + quantity + ", bestBefore="
         + bestBefore.get(Calendar.YEAR) + "/" + bestBefore.get(Calendar.MONTH);
   }
 
   @Override
-  public int compareTo(Product o) {
+  public int compareTo(Product o) { //Принцип открытости закрытости
     int resultOfComparing = this.getName().compareTo(o.getName());
     if (resultOfComparing == 0) {
       resultOfComparing = this.getName().compareTo(o.getName());

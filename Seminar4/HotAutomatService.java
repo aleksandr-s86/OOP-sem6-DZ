@@ -6,7 +6,7 @@ import Seminar1.HotBeverage;
 import Seminar1.HotBeverageAutomat;
 import Seminar1.Product;
 
-public class HotAutomatService implements Service<HotBeverageAutomat, HotBeverage> {
+public class HotAutomatService implements Service<HotBeverageAutomat, HotBeverage> { // принцип единственной ответственности
 
   @Override
   public HotBeverageAutomat restock(HotBeverageAutomat automat, HotBeverage product) {

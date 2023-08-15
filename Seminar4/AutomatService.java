@@ -6,6 +6,10 @@
 2.1 однотипными 
 2.2(*) разного типа Внесите соответственно изменения в остальной код, где используются объекты заказа*/
 
+/* Семинар 6. Взять реализованный код про приложение с Автоматом еды и напитков, и продемонстрировать применение принципов SOLID.
+То есть в коде прописать в комментариях, какой принцип выполняется. Если видите нарушение принципа, нужно прокомментировать участки кода, 
+которые рефакторите, указать какой принцип применяется и почему.*/
+
 package Seminar4;
 
 import java.util.List;
@@ -13,7 +17,7 @@ import java.util.List;
 import Seminar1.Automat;
 import Seminar1.Product;
 
-public class AutomatService implements Service<Automat, Product> {
+public class AutomatService implements Service<Automat, Product> {// принцип единственной ответственнности
 
   @Override
   public Automat restock(Automat automat, Product product) {
